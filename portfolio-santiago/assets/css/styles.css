@@ -17,6 +17,9 @@
   --container-color: hsl(0, 0%, 84%);
   --shadow: rgba(11, 11, 94, 0.325);
 
+  /*========== Display Logos ==========*/ 
+  --display1: none;
+  --display2: normal;   
 
   /* Change the first number */
   /* Blue: 207 - Purple: 250 - Pink: 356 - Teal: 174 */
@@ -138,6 +141,8 @@ body.dark-theme {
   --body-color: hsl(250, 67%, 7%);
   --container-color: hsl(240, 60%, 9%);
   --shadow: rgba(174, 174, 174, 0.325);
+  --display1: normal;
+  --display2: none;
 }
 
 /*========== 
@@ -219,6 +224,14 @@ body.dark-theme {
 .nav__toogle {
   display: flex;
   cursor: pointer;
+}
+
+.logo-1{
+  display: var(--display1);
+}
+
+.logo-2{
+  display: var(--display2);
 }
 
 @media screen and (max-width: 1023px) {

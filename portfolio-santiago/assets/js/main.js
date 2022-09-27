@@ -86,4 +86,3 @@ themeButton.addEventListener('click',() => {
 
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
-
