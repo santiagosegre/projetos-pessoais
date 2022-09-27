@@ -1,0 +1,430 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Roboto:wght@400;500&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Merienda:wght@400;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(252, 74%, 9%);
+  --title-color: hsl(252, 74%, 9%);
+  --text-color: hsl(207, 4%, 28%);
+  --text-color-light: hsl(0, 0%, 93%);
+  --body-color: hsl(0, 0%, 93%);
+  --container-color: hsl(0, 0%, 84%);
+  --shadow: rgba(11, 11, 94, 0.325);
+
+
+  /* Change the first number */
+  /* Blue: 207 - Purple: 250 - Pink: 356 - Teal: 174 */
+  --gradient-color: linear-gradient(180deg,
+                      hsla(207, 48%, 72%, 0),
+                      hsla(207, 65%, 65%, 1));
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: 'Roboto', sans-serif;
+  --title-font: 'DM Serif Text', serif;
+  --biggest-font-size: 1.5rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+  --tiny-font-size: .625rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-normal: 1;
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/* Responsive typography */
+@media screen and (min-width: 1024px) {
+  :root {
+    --biggest-font-size: 3rem;
+    --h1-font-size: 2.5rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+    --tiny-font-size: .688rem;
+  }
+}
+
+/* Responsive typography */
+@media screen and (min-width: 400px) {
+  :root {
+    --biggest-font-size: 2rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.4rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: .9rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+    --tiny-font-size: .688rem;
+  }
+
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* html {
+  scroll-behavior: smooth;
+} */
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  transition: background .4s; /* for dark mode animation */
+}
+
+h1, h2, h3 {
+  color: var(--title-color);
+  font-family: var(--title-font);
+  font-weight: var(--font-medium);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== THEME ===============*/
+.nav__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  column-gap: 3rem;
+  transition: color 0.3s;
+}
+
+.change-theme {
+  font-size: 1.8rem;
+  padding-bottom: 0.4rem;
+  color: var(--first-color);
+}
+
+/*========== Variables Dark theme ==========*/
+body.dark-theme {
+  --first-color: hsl(207, 4%, 95%);
+  --title-color: hsl(207, 4%, 95%);
+  --text-color: hsl(207, 4%, 65%);
+  --body-color: hsl(250, 67%, 7%);
+  --container-color: hsl(240, 60%, 9%);
+  --shadow: rgba(174, 174, 174, 0.325);
+}
+
+/*========== 
+    Color changes in some parts of 
+    the website, in light theme
+==========*/
+
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1024px;
+  margin-inline: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.section {
+  padding-block: 2.5rem;
+}
+
+.section__border {
+  border-bottom: 1px solid var(--title-color);
+  padding-bottom: rem;
+}
+
+.section__title, 
+.section__subtitle {
+  text-align: center;
+}
+
+.section__title {
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-semi-bold);
+  margin-bottom: .25rem;
+}
+
+.section__subtitle {
+  display: block;
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
+  margin-bottom: 3rem;
+}
+
+.main {
+  overflow: hidden; /* For animation */
+}
+
+/*=============== HEADER & NAV ===============*/
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+}
+
+.nav {
+  height: calc(var(--header-height) + 0.5rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--container-color);
+  margin: 0;
+  padding-inline: 1.5rem;
+  border-radius: 0 0 2rem 2rem;
+  box-shadow: 2px 2px 3px var(--shadow);
+}
+
+.nav__toggle,
+.nav__close {
+  color: var(--first-color);
+  cursor: pointer;
+  font-size: 1.8rem;
+}
+
+.nav__toogle {
+  display: flex;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1023px) {
+  
+  .nav__menu {
+    position: fixed;
+    z-index: 3;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: -60%;
+    margin: 0;
+    padding-bottom: 0.9rem;
+    padding-top: .8rem;
+    background-color: var(--container-color);
+    padding-inline: 1.5rem;
+    border-radius: 0 0 2rem 2rem;
+    box-shadow: 2px 2px 3px var(--shadow);
+  }
+
+  .nav {
+    border-radius: 2rem;
+    box-shadow: 2px 2px 3px var(--shadow);
+   }
+
+}
+
+
+
+.nav__link {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  transition: color 0.3s;
+  color: var(--first-color);
+}
+
+.nav__link:hover {
+  color: var(--text-color);
+}
+
+.nav__close {
+  position: absolute;
+  right: 1.5rem;
+  top: -2.9rem;
+  cursor: pointer;
+}
+/* Show menu */
+.show-menu {
+  top: 3.9rem;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.border-radius {
+  border-radius: 2rem 2rem 0 0;
+}
+
+/* Active link */
+
+
+/*=============== HOME ===============*/
+.home__container {
+  padding-top: 3rem;
+}
+
+.home__title {
+  text-align: center;
+  font-size: var(--h1-font-size);
+}
+
+.home__perfil {
+  justify-self: center;
+  display: flex;
+  position: relative;
+  width: 400px;
+  align-self: center;
+}
+
+.home__social {
+  justify-self: center;
+  display: flex;
+  column-gap: 1.5rem;
+  font-size: 1.5rem;
+  color: var(--first-color);
+  margin-top: -1rem;
+}
+
+.home__social a{
+  text-decoration: none;
+  color: var(--title-color);
+  transition: color 0.3s;
+}
+
+.a-linkedin:hover {
+  color: blue;
+}
+
+.a-git:hover {
+  color: rgb(118, 116, 116);
+}
+
+.a-email:hover {
+  color: red;
+}
+
+
+
+/*=============== SKILLS ===============*/
+
+
+
+/*=============== QUALIFICATION ===============*/
+
+
+/*=============== SERVICES ===============*/
+
+
+/*=============== PROJECTS ===============*/
+
+
+
+
+
+/*=============== TESTIMONIAL ===============*/
+
+
+
+
+
+/*=============== CONTACT ===============*/
+
+
+
+
+
+/*=============== FOOTER ===============*/
+
+
+/*=============== SCROLL BAR ===============*/
+
+
+/*=============== SCROLL UP ===============*/
+
+
+
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+
+@media screen and (max-width: 450px) {
+  .home__perfil {
+    justify-self: center;
+    display: flex;
+    position: relative;
+    width:  100%;
+    align-self: center;
+  }
+}
+
+/* For medium devices */
+
+/* For large devices */
+
+@media screen and (min-width: 1023px) {
+  .home__container {
+    padding-top: 4rem;
+  }
+
+  .header {
+    width: 100%;
+    top: 0;
+    transition: .4s;
+    background-color: var(--container-color);
+    box-shadow: 2px 2px 3px var(--shadow);
+  }
+
+  .nav {
+    border-radius: 0;
+    box-shadow: none;
+    height: calc(var(--header-height) + 1.5rem);
+    margin: 0 auto;
+    column-gap: 3rem; 
+  }
+  
+  .nav__link i,
+  .nav__close,
+  .nav__toggle{
+    display: none;
+  }
+  
+
+  .nav__list {
+    display: flex;
+    column-gap: 4rem;
+  }
+
+  .home__container{
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  
+
+
+}
