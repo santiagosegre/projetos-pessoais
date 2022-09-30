@@ -460,12 +460,13 @@ i {
 .projects__content {
   display: grid;
   justify-content: center;
+  text-align: center;
 }
 
 .projects__content img {
   width: 250px;
   border-radius: 1rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: .5rem;
 }
 
 .projects__subtitle {
@@ -490,6 +491,8 @@ i {
   border-radius: .3rem;
   cursor: pointer;
   transition: 0.3s;
+  margin: 0.5rem 1rem;
+  box-shadow: 3px 3px 5px var(--shadow);
 }
 
 /*=============== CONTACT ===============*/
