@@ -20,6 +20,7 @@
   --text-button-hover-color: white;
   --background-btn-color: hsl(247, 64%, 19%);
   --background-btn-hover-color: hsl(252, 74%, 9%);
+  --inputs-color: white;
 
   /*========== Display Logos ==========*/ 
   --display1: none;
@@ -155,6 +156,7 @@ body.dark-theme {
   --text-button-hover-color: hsl(0, 0%, 0%);
   --background-btn-color: hsl(0, 0%, 100%);
   --background-btn-hover-color: hsl(0, 0%, 84%);
+  --inputs-color: black;
 }
 
 /*========== 
@@ -398,7 +400,8 @@ text-align: justify;
 }
 
 p {
-  text-indent: 2rem;
+  /* text-indent: 2rem; */
+  line-height: 1.5rem;
 }
 
 i {
@@ -459,10 +462,62 @@ i {
 /*=============== CONTACT ===============*/
 .contact__container {
   margin: auto;
+  
 }
 
+.contact__form-div {
+  background-color: var(--container-color);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 3px 3px 5px var(--shadow);
+}
 
+.contact__form-div input,
+textarea {
+  width: 100%;
+  margin: 0.2rem 0;
+  padding: 0.5rem;
+  border-radius: .8rem;
+  border: none;
+  font-family: arial;
+  background-color: var(--first-color);
+  box-shadow: 3px 3px 5px var(--shadow);
+  color: var(--inputs-color);
+}
 
+.contact__form-div input {
+  margin-bottom: 1rem;
+}
+
+.contact__form-div textarea {
+  height: 10rem;
+  resize: none;
+  width: 100%;
+}
+
+.contact__button {
+  align-self: center;
+  text-align: center;
+}
+
+.contact__button {
+  font-size: var(--font-medium);
+  margin-top: .5rem;
+  padding: 0.5rem 2rem;
+  background-color: var(--background-btn-color);
+  color: var(--text-button-color);
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact__button:hover {
+  color: var(--text-button-hover-color);
+  background-color: var(--background-btn-hover-color);
+}
 
 /*=============== FOOTER ===============*/
 

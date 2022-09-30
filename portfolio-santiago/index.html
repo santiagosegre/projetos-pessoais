@@ -110,7 +110,7 @@
                         
                         <a href="#about" class="a-about">
                             <button type="button" href="#about" class="btn-about">
-                                Sobre mim
+                                Biografia
                             </button>
                         </a>
                     
@@ -140,7 +140,7 @@
                     </h3>
     
                     <p>
-                        Formei em Administração em 2017 pela UDF – Centro Universitário, e foi aí que entendi a necessidade de um planejamento para a construção de coisas grandiosas, que não adianta começar algo sem saber onde se quer chegar.
+                        Me formei em Administração em 2017 pela UDF – Centro Universitário, e foi aí que entendi a necessidade de um planejamento para a construção de coisas grandiosas, que não adianta começar algo sem saber onde se quer chegar.
                     </p>
 
                     <h3 class="about__subtitle">
@@ -224,7 +224,36 @@
                 </span>
 
                 <div class="contact__container container grid">
+                    <form action="contact" class="contact__form">
+                        <div class="contact__form-div">
+                            <div class="contact__form-tag">
+                                <label for="name">
+                                    Nome Completo: <br>
+                                </label>
+                                <input type="text" name="name" id="name" placeholder="Insira seu nome aqui." required>
+                                
+                            </div>
 
+                            <div class="contact__form-tag">
+                                <label for="email">
+                                    Email: <br>
+                                </label>
+                                <input type="email" name="email" id="email" placeholder="Insira seu email aqui." required>
+                                
+                            </div>
+
+                            <div class="contact__form-tag contact__form-area">
+                                <label for="">
+                                    Mensagem: <br>
+                                </label>
+                                <textarea name="mesage" id="mesage" placeholder="Insira sua mensagem aqui..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="contact__button">
+                                Enviar
+                            </button>
+                        </div>
+                    </form>
                 </div>
         </main>
 
@@ -234,19 +263,6 @@
                 &#169; Copyright Santiago Segre. Todos os direitos reservados.
             </p>
         </footer>
-
-
-        <!--========== SCROLL UP ==========-->
-        
-
-        <!--=============== SCROLLREVEAL ===============-->
-        <script src=""></script>
-
-        <!--=============== SWIPER JS ===============-->
-        <script src=""></script>
-        
-        <!--=============== EMAIL JS ===============-->
-        
 
         <!--=============== MAIN JS ===============-->
         <script src="assets/js/main.js"></script>
