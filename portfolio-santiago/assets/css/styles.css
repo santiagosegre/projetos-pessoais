@@ -16,6 +16,10 @@
   --body-color: hsl(0, 0%, 93%);
   --container-color: hsl(0, 0%, 84%);
   --shadow: rgba(11, 11, 94, 0.325);
+  --text-button-color: hsl(0, 0%, 93%);
+  --text-button-hover-color: white;
+  --background-btn-color: hsl(247, 64%, 19%);
+  --background-btn-hover-color: hsl(252, 74%, 9%);
 
   /*========== Display Logos ==========*/ 
   --display1: none;
@@ -56,7 +60,7 @@
     --biggest-font-size: 3rem;
     --h1-font-size: 2.5rem;
     --h2-font-size: 1.5rem;
-    --h3-font-size: 1.25rem;
+    --h3-font-size: 1.3rem;
     --normal-font-size: 1rem;
     --small-font-size: .875rem;
     --smaller-font-size: .813rem;
@@ -147,6 +151,10 @@ body.dark-theme {
   --shadow: rgba(174, 174, 174, 0.325);
   --display1: normal;
   --display2: none;
+  --text-button-color: hsl(240, 60%, 9%);
+  --text-button-hover-color: hsl(0, 0%, 0%);
+  --background-btn-color: hsl(0, 0%, 100%);
+  --background-btn-hover-color: hsl(0, 0%, 84%);
 }
 
 /*========== 
@@ -167,13 +175,13 @@ body.dark-theme {
 }
 
 .section {
-  padding-block: 2.5rem;
+  padding-block: 1rem;
 }
 
-.section__border {
+/* .section__border {
   border-bottom: 1px solid var(--title-color);
-  padding-bottom: rem;
-}
+  padding-bottom: 1rem;
+} */
 
 .section__title, 
 .section__subtitle {
@@ -189,7 +197,7 @@ body.dark-theme {
 .section__subtitle {
   display: block;
   font-size: var(--small-font-size);
-  color: var(--text-color-light);
+  color: var(black);
   margin-bottom: 3rem;
 }
 
@@ -306,7 +314,7 @@ body.dark-theme {
 
 /*=============== HOME ===============*/
 .home__container {
-  padding-top: 3rem;
+  padding-top: 4rem;
 }
 
 .home__title {
@@ -349,15 +357,16 @@ body.dark-theme {
   color: red;
 }
 
-
+.a-about {
+  justify-self: center;
+}
 
 .btn-about {
-  justify-self: center;
   font-size: var(--font-medium);
   margin-top: .5rem;
   padding: 0.5rem 2rem;
-  background-color: var(--first-color);
-  color: var(--body-color);
+  background-color: var(--background-btn-color);
+  color: var(--text-button-color);
   border: none;
   border-radius: 1rem;
   cursor: pointer;
@@ -365,33 +374,59 @@ body.dark-theme {
 }
 
 .btn-about:hover {
-  font-weight: bolder;
+  color: var(--text-button-hover-color);
+  background-color: var(--background-btn-hover-color);
+}
+
+
+/*=============== ABOUT ===============*/
+
+.about {
+  background-color: var(--container-color);
+  transition: background .5s;
+}
+
+.about__container {
+margin: auto;
+padding: 0 1.5rem;
+text-align: justify;
+}
+
+.about__subtitle {
+  text-align: center;
+  padding-top: 1rem;
+}
+
+p {
+  text-indent: 2rem;
 }
 
 /*=============== SKILLS ===============*/
 
+.skills__container {
+  margin: auto;
+}
 
 
-/*=============== QUALIFICATION ===============*/
-
-
-/*=============== SERVICES ===============*/
 
 
 /*=============== PROJECTS ===============*/
+.projects {
+  background-color: var(--container-color);
+  transition: background .5s;
+}
 
-
-
-
-
-/*=============== TESTIMONIAL ===============*/
-
+.projects__container {
+  margin: auto;
+}
 
 
 
 
 /*=============== CONTACT ===============*/
-
+.contact__container {
+  margin: auto;
+}
 
 
 
