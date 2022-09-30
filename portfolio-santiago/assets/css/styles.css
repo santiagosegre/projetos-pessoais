@@ -454,10 +454,43 @@ i {
 
 .projects__container {
   margin: auto;
+  overflow: initial;
 }
 
+.projects__content {
+  display: grid;
+  justify-content: center;
+}
 
+.projects__content img {
+  width: 250px;
+  border-radius: 1rem;
+  margin-bottom: 1.25rem;
+}
 
+.projects__subtitle {
+  font-size: var(--small-font-size);
+}
+
+.projects__title {
+  font-size: var(--h2-font-size);
+  margin-bottom: 1.25rem 0.5rem;
+}
+
+.projects__button {
+  display: inline-flex;
+  align-items: center;
+  text-align: center;
+  align-self: center;
+  font-size: var(--font-medium);
+  padding: 0.5rem;
+  background-color: var(--background-btn-color);
+  color: var(--text-button-color);
+  border: none;
+  border-radius: .3rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
 /*=============== CONTACT ===============*/
 .contact__container {
